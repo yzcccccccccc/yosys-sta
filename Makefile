@@ -5,7 +5,8 @@ SDC_FILE ?= $(PROJ_PATH)/example/gcd.sdc
 RTL_FILES ?= $(shell find $(PROJ_PATH)/example -name "*.v")
 export CLK_FREQ_MHZ ?= 500
 
-RESULT_DIR = $(PROJ_PATH)/result/$(DESIGN)-$(CLK_FREQ_MHZ)MHz
+RESULT_BASE_DIR ?= $(PROJ_PATH)
+RESULT_DIR ?= $(RESULT_BASE_DIR)/result/$(DESIGN)-$(CLK_FREQ_MHZ)MHz
 SCRIPT_DIR = $(PROJ_PATH)/scripts
 NETLIST_SYN_V   = $(RESULT_DIR)/$(DESIGN).netlist.syn.v
 NETLIST_FIXED_V = $(RESULT_DIR)/$(DESIGN).netlist.fixed.v
